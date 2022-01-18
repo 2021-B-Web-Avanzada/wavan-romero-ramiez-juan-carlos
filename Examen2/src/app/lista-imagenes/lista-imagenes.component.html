@@ -1,0 +1,22 @@
+
+<div class="imagenes contenedor">
+  <div class="contenedor-principal">
+    <button role="button" id="flecha-izquierda" class="flecha-izquierda" (click)="clickBotonIzquierdo()"><img [src]="urlflechaIz" width="15px"  ></button>
+    <div class="contenedor-carousel" id="{{idcarrusel}}">
+      <div class="carousel">
+        <div class="imagen" [ngStyle]="{'min-width': tamanioImagen}" *ngFor="let imagen of arregloImagenes; let i = index" >
+          <a href="#"><img [src]="imagen.linkimagen" alt=""   height="320px"></a>
+        </div>
+      </div>
+    </div>
+    <button role="button" id="flecha-derecha" class="flecha-derecha" (click)="clickBotonDerecho()"><img [src]="urlflechaDe" width="15px"> </button>
+
+  </div>
+</div>
+
+
+
+
+
+
+<router-outlet></router-outlet>

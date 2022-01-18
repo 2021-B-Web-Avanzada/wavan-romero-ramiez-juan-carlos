@@ -1,0 +1,105 @@
+body{margin: auto;
+background-image: url("https://play.hbomax.com/assets/images/backgrounds/hbomax/default_1920x1080.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+nav{
+
+  padding-bottom: 0px;
+  padding-left:  0px;
+  padding-right: 0px;
+  padding-top: 0px;
+  max-resolution: 0px;
+
+
+
+}
+
+ul{
+  clear: both;
+  float: left;
+  width: 100%;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  position: fixed;
+  z-index: 100;
+}
+
+ul li {
+
+  float: left;
+}
+
+
+.contenedor{
+  position: relative;
+
+  text-align: left;
+}
+
+.centrado{
+  color: white;
+  position: absolute;
+  top: 55%;
+  left: 5%;
+
+}
+#parrafo{
+  padding-top: 0%;
+}
+
+.pelicula-principal {
+  font-size: 16px;
+  min-height: 40.62em;
+  color: #fff;
+  background-image:  url('https://www.elespectador.com/resizer/OH2XslTxRjj2TnmIfjr_Pt0xcWg=/525x350/filters:format(jpeg)/cloudfront-us-east-1.images.arcpublishing.com/elespectador/K7Z5ZWTUIFH3BFGHY2UDGRVWGU.jpg');
+  background-position: left;
+  background-size: cover;
+  margin-bottom: 3.12em;
+  display: flex;
+  align-items: end;
+}
+
+.pelicula-principal .contenedor {
+  margin-left: 6.25em;
+  margin-bottom: 6.25em;
+}
+
+.pelicula-principal .titulo {
+  font-weight: 600;
+  font-size: 3.12em;
+  margin-bottom: 0.4em;
+}
+
+.pelicula-principal .descripcion {
+  font-weight: normal;
+  font-size: 1em;
+  line-height: 1.75em;
+  max-width: 50%;
+  margin-bottom: 1.25em;
+}
+
+.pelicula-principal .boton {
+  background: rgba(0,0,0, 0.5);
+  border: none;
+  padding: 0.93em 0.93em;
+  color: #fff;
+  margin-right: 1.25em;
+  cursor: pointer;
+  transition: .3s ease all;
+  font-size: 1.12em;
+}
+
+.pelicula-principal .boton:hover {
+  background: rgba(0, 47, 187, 0.7)  ;
+  color: white;
+}
+
+.divConpalabrasyPeliculas{
+  color: white;
+  display: flex;
+}
+
+
+

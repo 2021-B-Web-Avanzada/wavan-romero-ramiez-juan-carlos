@@ -1,0 +1,34 @@
+
+
+<div class="peliculas contenedor">
+
+
+  <div class="contenedor-principal">
+    <button role="button" id="flecha-izquierda" class="flecha-izquierda" (click)="clickBotonIzquierdo()"><img [src]="urlflechaIz" width="15px"  ></button>
+
+    <div class="contenedor-carousel" id="{{idcarrusel}}">
+      <div class="carousel">
+        <div class="pelicula" [ngStyle]="{'min-width': tamanioImagen}" *ngFor="let pelicula of arregloPeliculas; let i = index" >
+          <a href="#"><img [src]="pelicula.linkimagen" alt=""  height="195"></a>
+          <div class="classParaC">
+          <a href="#" class="classParaA"><img [src]="urlReproducir" alt="" width="15" height=20   [ngStyle]="{'margin': '8px 1px '}"></a>
+          <a href="#" class="classParaB"><img [src]="urlAgregar" alt="" width="15" height=20   [ngStyle]="{'margin': '8px 1px '}"></a>
+          </div>
+          <h3>{{pelicula.nombre}}</h3>
+        </div>
+
+
+      </div>
+    </div>
+
+    <button role="button" id="flecha-derecha" class="flecha-derecha" (click)="clickBotonDerecho()"><img [src]="urlflechaDe" width="15px"> </button>
+
+  </div>
+</div>
+
+
+
+
+
+
+<router-outlet></router-outlet>
