@@ -1,0 +1,23 @@
+<h1
+[ngStyle]="{
+'background-color': '#000',
+'color': color,
+'border': 'solid 5px '+color
+}"
+>Hola desde Banner</h1>
+<h2>{{nombre}}-{{apellido}}</h2>
+<p>Mascota{{mascotas.cachetes.edad}}</p>
+
+<img [src]="urlImagen" alt="">
+<a [href]="url" target="_blank">Mas informacion</a>
+
+<button (click)="ejecutarEventoBlur()" (blur)="ejecutarEventoBlur()" >
+  Event Binding
+</button>
+
+<p>{{fecha | date}}</p>
+<p> {{sueldo | currency}}</p>
+
+<script>
+
+</script>
