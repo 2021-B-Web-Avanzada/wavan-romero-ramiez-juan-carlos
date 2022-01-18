@@ -1,0 +1,102 @@
+
+.contenedor {
+  width: 95%;
+  margin: auto;
+}
+
+.imagenes {
+  margin-bottom: 10px;
+}
+
+.imagenes .contenedor-principal {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.imagenes .contenedor-principal .flecha-izquierda,
+.imagenes .contenedor-principal .flecha-derecha {
+  position: absolute;
+  border: none;
+  background: rgba(0,0,0,0.0);
+  font-size: 40px;
+  height: 92%;
+  top: calc(100% - 94.8%);
+  line-height: 40px;
+  width: 50px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 90;
+  transition: .2s ease all;
+}
+
+.imagenes .contenedor-principal .flecha-izquierda:hover,
+.imagenes .contenedor-principal .flecha-derecha:hover {
+  background: rgba(0,0,0, .9);
+}
+
+.imagenes .contenedor-principal .flecha-izquierda {
+  left: 0;
+}
+
+.imagenes .contenedor-principal .flecha-derecha {
+  right: 0;
+}
+.imagenes .contenedor-carousel {
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.imagenes .contenedor-carousel .carousel {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.imagenes .contenedor-carousel .carousel .imagen {
+  min-width: 20%;
+  transition: .3s ease all;
+  box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+}
+
+.imagenes .contenedor-carousel .carousel .imagen:hover {
+  transform: scale(1.01);
+  transform-origin: center;
+
+
+}
+
+.imagenes .contenedor-carousel .carousel .imagen img {
+  width: 100%;
+  vertical-align: top;
+}
+
+@media screen and (max-width: 800px) {
+  .imagenes .contenedor-carousel {
+    overflow: visible;
+  }
+
+  .imagenes .contenedor-carousel .carousel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+
+  .imagenes .flecha-izquierda,
+  .imagenes .flecha-derecha {
+    display: none;
+  }
+}
+
+h3{
+  color: white;
+  margin: 10px;
+}
+
+.imagen{
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+}

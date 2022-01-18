@@ -1,0 +1,144 @@
+
+
+.contenedor {
+  width: 95%;
+  margin: auto;
+}
+
+.peliculas {
+  margin-bottom: 10px;
+}
+
+.peliculas .contenedor-principal {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.peliculas .contenedor-principal .flecha-izquierda,
+.peliculas .contenedor-principal .flecha-derecha {
+  position: absolute;
+  border: none;
+  background: rgba(0,0,0,0.0);
+  font-size: 40px;
+  height: 64%;
+  top: calc(100% - 93.8%);
+  line-height: 40px;
+  width: 50px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 90;
+  transition: .2s ease all;
+}
+
+.peliculas .contenedor-principal .flecha-izquierda:hover,
+.peliculas .contenedor-principal .flecha-derecha:hover {
+  background: rgba(0,0,0, .9);
+}
+
+.peliculas .contenedor-principal .flecha-izquierda {
+  left: 0;
+}
+
+.peliculas .contenedor-principal .flecha-derecha {
+  right: 0;
+}
+.peliculas .contenedor-carousel {
+  width: 100%;
+  padding: 20px 0;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.peliculas .contenedor-carousel .carousel {
+  display: flex;
+  flex-wrap: nowrap;
+}
+.peliculas .contenedor-carousel .carousel .pelicula {
+  min-width: 20%;
+  transition: .3s ease all;
+  box-shadow: 5px 5px 10px rgba(0,0,0, .3);
+}
+.classParaC{
+  display: flex;
+  margin: auto;
+
+}
+.classParaA{
+  visibility: hidden;
+
+}
+.classParaB{
+  visibility: hidden;
+
+}
+.peliculas .contenedor-carousel .carousel .pelicula:hover {
+  transform: scale(1.01);
+  transform-origin: center;
+  .classParaA{
+    visibility: visible;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom:4em;
+    right:40%;
+    border: solid white;
+    border-radius: 50%;
+
+  }
+  .classParaB{
+    visibility: visible;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom:4em;
+    right: calc(40% - 50px);
+    border: solid white;
+    border-radius: 50%;
+
+  }
+
+}
+
+.peliculas .contenedor-carousel .carousel .pelicula img {
+  width: 100%;
+  vertical-align: top;
+}
+
+@media screen and (max-width: 800px) {
+  .peliculas .contenedor-carousel {
+    overflow: visible;
+  }
+
+  .peliculas .contenedor-carousel .carousel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .peliculas .indicadores,
+  .peliculas .flecha-izquierda,
+  .peliculas .flecha-derecha {
+    display: none;
+  }
+}
+
+h3{
+  color: white;
+  margin: 10px;
+}
+
+.pelicula{
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+
+
+
+
+
+
+

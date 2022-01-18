@@ -1,0 +1,92 @@
+<nav [ngStyle]="{'padding': '0%'}">
+  <ul [ngStyle]="{
+  'background-color': '#000'
+  }">
+    <li [ngStyle]="{'padding': '10px'}"><a href="#"><img [src]="urlMenuHamburguesa" alt="" width="30px" height="30px"  [ngStyle]="{'border-radius':'50px' }"></a></li>
+    <li [ngStyle]="{'padding': '10px'}" ><a href="#"><img [src]="urlBuscar" alt="" width="30px" height="30px" [ngStyle]="{'border-radius':'50px' }"></a></li>
+    <li [ngStyle]="{'padding-left': '550px','padding-top': '10px' }" ><a href="#"><img [src]="urlHbo" alt="" width="200px" height="30px"></a></li>
+    <li [ngStyle]="{'float': 'right', 'padding-top': '7px', 'padding-right': '25px'}"><a href="#" ><img [src]="urlFotoUusario" alt="" width="30px" height="30px" [ngStyle]="{'border-radius':'50px' }"> <p [ngStyle]="{'float': 'right', 'color': 'white', 'padding-left': '15px', 'padding-right': '7px'}">Juan</p>
+    </a></li>
+  </ul>
+</nav>
+
+<!--<div class="contenedor" [ngStyle]="{'width': '100%'}">-->
+<!--  <img [src]="url" alt="" width="100%" >-->
+<!--  <div class="centrado">-->
+<!--    <h1 [ngStyle]="{'font-size': '600%'}">Dune</h1>-->
+<!--    <p id="parrafo">La inspiradora historia de Venus y Serena Willians</p>-->
+<!--    <a href="#"> <img [src] ="urlReprod" alt="" width="60px"height="60px" [ngStyle]="{'border-radius': '50%'}"> </a>-->
+
+<!--  </div>-->
+<!--</div>-->
+<div class="pelicula-principal">
+  <div class="contenedor">
+    <h3 class="titulo">Euphoria</h3>
+    <p class="descripcion">
+      Cuando eres joven todo parece ser permanente. Nada lo es.
+    </p>
+    <button role="button" class="boton" [ngStyle]="{'border-radius':'50% ' ,  'background': 'rgba(0, 47, 187, 0.5) '}"><img [src]="urlReprod" alt="" width="30px" height="30px"  ></button>
+    <button role="button" class="boton" [ngStyle]="{'border-radius':'50px' }"><i class="fas fa-info-circle"></i>MÁS INFO</button>
+  </div>
+</div>
+
+
+<a href="#" [ngStyle]="{'text-decoration':'none'}"><h1 [ngStyle]="{'color':'white' }"> Continuar Viendo </h1></a>
+<app-lista-peliculas></app-lista-peliculas>
+
+
+<h1 [ngStyle]="{'color':'white' }"> Solo para ti </h1>
+<app-lista-peliculas
+[arregloPeliculas]="arregloPeliculasSoloParaTi"
+[idcarrusel]="'uno'"
+[tamanioImagen]="'10%'"
+>
+</app-lista-peliculas>
+
+
+
+<a href="#" [ngStyle]="{'text-decoration':'none'}"><h1 [ngStyle]="{'color':'white' }"> Mi Lista </h1></a>
+<app-lista-peliculas
+  [arregloPeliculas]="milista"
+  [idcarrusel]="'dos'"
+  [tamanioImagen]="'33%'"
+>
+</app-lista-peliculas>
+
+
+
+<h1 [ngStyle]="{'color':'white' }"> Iconicos e imperdibles </h1>
+<app-lista-peliculas
+  [arregloPeliculas]="iconicaseimperdibles"
+  [idcarrusel]="'tres'"
+  [tamanioImagen]="'25%'"
+>
+</app-lista-peliculas>
+
+<div class="divConpalabrasyPeliculas">
+<div [ngStyle]="{'margin-left':'20px', 'margin-top':'30px' }">
+  <h3 [ngStyle]="{ 'margin-left': '40px' }">No te lo pierdas</h3>
+  <h2 [ngStyle]="{ 'margin-left': '40px' }">Lo MAX visto</h2>
+  <h4 [ngStyle]="{ 'margin-left': '40px' }">El TOP 10 de películas y series en tendencia
+    esta semana</h4>
+</div>
+  <div  [ngStyle]="{'margin-right':'20px' }">
+    <app-lista-peliculas
+      [arregloPeliculas]="arregloPeliculasSoloParaTi"
+      [idcarrusel]="'cuatro'"
+      [tamanioImagen]="'15%'"
+    >
+    </app-lista-peliculas>
+  </div>
+</div>
+<h1 [ngStyle]="{'color':'white' }"> Grandes Estrellas</h1>
+<h3 [ngStyle]="{'color':'white', 'margin-left': '40px' }"> Éxitos de tus estrellas del cine favoritas</h3>
+  <app-lista-imagenes></app-lista-imagenes>
+
+<h1 [ngStyle]="{'color':'white' }">Historias que merecen ser contadas  </h1>
+<app-lista-peliculas
+  [arregloPeliculas]="iconicaseimperdibles"
+  [idcarrusel]="'cinco'"
+  [tamanioImagen]="'25%'"
+>
+</app-lista-peliculas>
