@@ -79,20 +79,21 @@ router.put("/:nombre1&:nombre2",(req,res)=>
         if(nombre && anio && compositor && duracion && genero){
             _.each(albunes,(albun,i)=>
                 {
-                    _.each(albun.canciones,(cancion,i)=>
-                        {
-                            if (cancion.nombre == nombre2) {
-                                cancion.nombre= nombre;
-                                cancion.anio= anio;
-                                cancion.compositor= compositor;
-                                cancion.duracion= duracion;
-                                cancion.genero= genero;
+                    if (albun.nombre == nombre1) {
+                        _.each(albun.canciones, (cancion, i) => {
+                                if (cancion.nombre == nombre2) {
+                                    cancion.nombre = nombre;
+                                    cancion.anio = anio;
+                                    cancion.compositor = compositor;
+                                    cancion.duracion = duracion;
+                                    cancion.genero = genero;
+
+                                }
+
 
                             }
-
-
-                        }
-                    )
+                        )
+                    }
                 }
             )
             const albunesString=JSON.stringify(albunes);
@@ -100,7 +101,7 @@ router.put("/:nombre1&:nombre2",(req,res)=>
             res.json(albunes)
         }
         else{
-            res.json("error")
+            res.json("errorrrr")
         }
     }
 )

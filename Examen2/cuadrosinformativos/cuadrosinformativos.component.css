@@ -1,0 +1,30 @@
+.contenedor{
+margin: 5%;
+
+}
+.botoncd{
+  background-color: orangered;
+  border-radius: 25px;
+  text-align: center;
+  width: 25%;
+  color: black;
+}
+.contenedor1{
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  width: 43%;
+  margin-bottom: 4%;
+}
+
+
+.contenedor2{
+  width: 43%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  height: 300px;
+  margin-bottom: 4%;
+
+}
+a{
+  text-decoration: none;
+}

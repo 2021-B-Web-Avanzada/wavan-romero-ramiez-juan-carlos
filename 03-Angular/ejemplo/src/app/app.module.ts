@@ -14,6 +14,14 @@ import {AuthService} from "./servicios/auth/auth.service";
 import {estaLogueadoGuard} from "./servicios/auth/esta-logueado.guard";
 import {es_administradorGuard} from "./servicios/auth/es_administrador.guard";
 import {BannerImagenesModule} from "./componentes/banner-imagenes/banner-imagenes.module";
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { RutaUsuarioPerfilComponent } from './rutas/ruta-usuario-perfil/ruta-usuario-perfil.component';
+import {InputSwitchModule} from "primeng/inputswitch";
+import {KnobModule} from "primeng/knob";
+import {SplitButtonModule} from "primeng/splitbutton";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {MatButton, MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   //componentes
@@ -25,13 +33,22 @@ import {BannerImagenesModule} from "./componentes/banner-imagenes/banner-imagene
     RutaUsuarioComponent,
     RutaPostComponent,
     RutaInicioComponent,
-    RutaAppComponent
+    RutaAppComponent,
+    RutaUsuarioPerfilComponent
   ],
   //modulos
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BannerImagenesModule
+    BannerImagenesModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    InputSwitchModule,
+    KnobModule,
+    SplitButtonModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   //servicios
   providers: [

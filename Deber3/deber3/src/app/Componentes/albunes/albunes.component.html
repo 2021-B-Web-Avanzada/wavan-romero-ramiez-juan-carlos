@@ -1,0 +1,469 @@
+<h1 *ngIf="!mostrarcanciones">Albunes</h1>
+<h1 *ngIf="mostrarcanciones">Canciones</h1>
+
+<table class="table table-striped"  *ngIf="!mostrarcanciones">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Año</th>
+    <th scope="col">Autor</th>
+    <th scope="col">Precio</th>
+    <th scope="col">Disponible en Linea</th>
+    <th scope="col">Eliminar</th>
+    <th scope="col">Editar</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let albun of arreglo; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+
+    <td (click)="ejecutardosfunciones2(albun.nombre)">
+
+      {{ albun.nombre }}
+
+    </td>
+    <td>{{ albun.anio }}</td>
+    <td>{{ albun.autor }}</td>
+    <td>{{ albun.precio }}</td>
+    <td>{{ albun.disponible_en_linea }}</td>
+    <td (click)="EliminarAlbun(albun.nombre)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+      <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+    </svg></td>
+    <td (click)="ejecutardosfunciones(albun.nombre)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+      <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+    </svg></td>
+  </tr>
+  </tbody>
+</table>
+
+
+
+
+
+
+
+
+<table class="table table-striped" *ngIf="mostrarcanciones">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Año</th>
+    <th scope="col">Compositor</th>
+    <th scope="col">Duracion</th>
+    <th scope="col">Genero</th>
+    <th scope="col">Eliminar</th>
+    <th scope="col">Editar</th>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let cancion of arreglocanciones; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+
+    <td>
+        {{ cancion.nombre }}
+    </td>
+    <td>{{ cancion.anio }}</td>
+    <td>{{ cancion.compositor }}</td>
+    <td>{{ cancion.duracion }}</td>
+    <td>{{ cancion.genero }}</td>
+    <td (click)="eliminarCancion(cancion.nombre)"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+      <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+    </svg></td>
+    <td (click)="ejecutardosfuncionestres(cancion.nombre)"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill" viewBox="0 0 16 16">
+      <path d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z"/>
+    </svg></td>
+  </tr>
+  </tbody>
+</table>
+
+<div class="d-grip gap-2" *ngIf="mostrarcanciones">
+  <button class="btn btn-primary btn-block"
+          (click)="regresar()"
+  >Regresar</button>
+</div>
+
+<div class="d-grip gap-2" *ngIf="!mostrarcanciones && !mostrarformcrear">
+  <button class="btn btn-primary btn-block"
+          (click)="mostrarcrear()"
+  >Crear</button>
+</div>
+
+<div *ngIf="mostrarformcrear">
+
+  <label for="nombreal"
+         class="form-label">
+    Nombre:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="cAnombre"
+         id="nombreal"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <label for="anioal"
+         class="form-label">
+    Año:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="cAanio"
+         id="anioal"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <label for="autoral"
+         class="form-label">
+    Autor:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="cAautor"
+         id="autoral"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <label for="precioal"
+         class="form-label">
+    Precio:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="cAprecio"
+         id="precioal"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <label for="disponibleal"
+         class="form-label">
+    Disponible en linea:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="cAdisponible_en_linea"
+         id="disponibleal"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <div class="d-grip gap-2"  [ngStyle]="{'margin':'5px','float':'left'}">
+    <button class="btn btn-primary btn-block"
+            (click)="crearAlbun()"
+    >Aceptar</button>
+  </div>
+  <div class="d-grip gap-2"  [ngStyle]="{'margin':'5px','float':'right' }">
+    <button class="btn btn-primary btn-block"
+            (click)="ocultarcrear()"
+    >Cancelar</button>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div *ngIf="mostraractualizar">
+
+  <label for="nombreact"
+         class="form-label">
+    Nombre:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="cAnombre"
+         id="nombreact"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <label for="anioact"
+         class="form-label">
+    Año:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="cAanio"
+         id="anioact"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <label for="autoract"
+         class="form-label">
+    Autor:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="cAautor"
+         id="autoract"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <label for="precioalct"
+         class="form-label">
+    Precio:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="cAprecio"
+         id="precioalct"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <label for="disponiblealct"
+         class="form-label">
+    Disponible en linea:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="cAdisponible_en_linea"
+         id="disponiblealct"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <div class="d-grip gap-2"  [ngStyle]="{'margin':'5px','float':'left'}">
+    <button class="btn btn-primary btn-block"
+            (click)="actualizarAlbun()"
+    >Aceptar</button>
+  </div>
+  <div class="d-grip gap-2"  [ngStyle]="{'margin':'5px','float':'right' }">
+    <button class="btn btn-primary btn-block"
+            (click)="ocultaractualiza()"
+    >Cancelar</button>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 *ngIf="mostrarcanciones && !mostrarformcrearcancion"></h1>
+
+
+
+<div class="d-grip gap-2" *ngIf="mostrarcanciones && !mostrarformcrearcancion">
+  <button class="btn btn-primary btn-block"
+          (click)="mostrarmostrarcan()"
+  >Crear</button>
+</div>
+
+
+
+<div *ngIf="mostrarformcrearcancion">
+
+  <label for="nombrecan"
+         class="form-label">
+    Nombre:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="nombrecan"
+         id="nombrecan"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <label for="aniocan"
+         class="form-label">
+    Año:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="aniocan"
+         id="aniocan"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <label for="autorcan"
+         class="form-label">
+    Compositor:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="compositorcan"
+         id="autorcan"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <label for="duracion"
+         class="form-label">
+    Duracion:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="duracioncan"
+         id="duracion"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <label for="genero"
+         class="form-label">
+    Genero:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="genero"
+         id="genero"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <div class="d-grip gap-2"  [ngStyle]="{'margin':'5px','float':'left'}">
+    <button class="btn btn-primary btn-block"
+            (click)="crearcancion()"
+    >Aceptar</button>
+  </div>
+  <div class="d-grip gap-2"  [ngStyle]="{'margin':'5px','float':'right' }">
+    <button class="btn btn-primary btn-block"
+            (click)="ocultarmostrarcan()"
+    >Cancelar</button>
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div *ngIf="mosactualizarcancion">
+
+  <label for="nombrecanA"
+         class="form-label">
+    Nombre:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="nombrecan"
+         id="nombrecanA"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <label for="aniocanA"
+         class="form-label">
+    Año:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="aniocan"
+         id="aniocanA"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <label for="autorcanA"
+         class="form-label">
+    Compositor:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="compositorcan"
+         id="autorcanA"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <label for="duracionA"
+         class="form-label">
+    Duracion:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="duracioncan"
+         id="duracionA"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <label for="generoA"
+         class="form-label">
+    Genero:
+  </label>
+  <input type="text"
+         class="form-control"
+         [(ngModel)]="genero"
+         id="generoA"
+         aria-describedby="buscarAlbunAyuda">
+
+
+  <div class="d-grip gap-2"  [ngStyle]="{'margin':'5px','float':'left'}">
+    <button class="btn btn-primary btn-block"
+            (click)="actualizarCancion()"
+    >Aceptar1</button>
+  </div>
+  <div class="d-grip gap-2"  [ngStyle]="{'margin':'5px','float':'right' }">
+    <button class="btn btn-primary btn-block"
+            (click)="ocultarmostraractualizarcancion()"
+    >Cancelar1</button>
+  </div>
+
+
+</div>
